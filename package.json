@@ -36,5 +36,10 @@
 		"husky": "^9.0.11",
 		"lint-staged": "^15.2.2",
 		"stylelint": "^14.16.1"
+	},
+	"dependencies": {
+		"@wordpress/block-editor": "^12.19.1",
+		"@wordpress/blocks": "^12.28.1",
+		"@wordpress/i18n": "^4.51.0"
 	}
 }
