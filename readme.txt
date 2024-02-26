@@ -10,6 +10,15 @@ Example block scaffolded with Create Block tool.
 
 npx @wordpress/create-block boilerplateblox   
 
+...when cloned, do this.
+
+git remote rename origin upstream 
+
+git remote add origin [your-repo]
+
+git remote -v 
+
+
 === added linting / formatting prettier === 
 https://developer.wordpress.org/block-editor/reference-guides/packages/packages-create-block/
 https://developer.wordpress.org/block-editor/reference-guides/packages/packages-prettier-config/
