@@ -32,7 +32,7 @@ import './editor.scss';
 export default function Edit() {
 	return (
 		<div { ...useBlockProps() }>
-			<InnerBlocks allowedBlocks={ [ 'core/image' ] } />
+			<InnerBlocks allowedBlocks={ [ 'blocks-course/team-member' ] } />
 		</div>
 	);
 }

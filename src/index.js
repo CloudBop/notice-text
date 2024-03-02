@@ -12,6 +12,7 @@ import { registerBlockType } from '@wordpress/blocks';
  *
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
+import './team-member';
 import './style.scss';
 
 /**
@@ -20,7 +21,6 @@ import './style.scss';
 import Edit from './edit';
 import save from './save';
 import metadata from '../block.json';
-
 /**
  * Every block starts by registering a new block type definition.
  *
