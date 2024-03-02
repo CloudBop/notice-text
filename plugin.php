@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       Team Members
+ * Plugin Name:       Blocks Course Team Members
  * Description:       A team members grid.
  * Requires at least: 6.1
  * Requires PHP:      7.0
