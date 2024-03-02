@@ -32,7 +32,41 @@ import './editor.scss';
 export default function Edit() {
 	return (
 		<div { ...useBlockProps() }>
-			<InnerBlocks allowedBlocks={ [ 'blocks-course/team-member' ] } />
+			<InnerBlocks
+				allowedBlocks={ [ 'blocks-course/team-member' ] }
+				// template={[
+				// 	// array of arrays
+				// 	['blocks-course/team-member'],
+				// 	['blocks-course/team-member'],
+				// 	['blocks-course/team-member'],
+				// 	//
+				// ]}
+
+				//  hook into array and provide block-attributes
+				template={ [
+					//
+					[
+						'blocks-course/team-member',
+						// block attributes
+						{
+							name: 'Name 1',
+							bio: 'Bio 1',
+						},
+					],
+					[
+						'blocks-course/team-member',
+						{
+							// block attributes
+							name: 'Name 2',
+							bio: 'Bio 2',
+						},
+					],
+					//
+					[ 'blocks-course/team-member' ],
+				] }
+				//
+				templateLock={ 'all' } // || "insert"
+			/>
 		</div>
 	);
 }
