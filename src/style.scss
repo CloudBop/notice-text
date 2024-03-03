@@ -5,8 +5,36 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-create-block-boilerplateblox {
-	background-color: #21759b;
-	color: #fff;
-	padding: 2px;
+.wp-block-blox-notice-text {
+
+	margin: 0 auto;
+	padding: 0;
+
+	h4 {
+		margin: 0;
+	}
+
+	// > div {
+	// 	background-color: hsl(120, 100%, 50%);
+	// }
+
+	&.is-style-warning {
+		border: 3px solid;
+		border-color: hsl(33, 100%, 49%);
+	}
+
+	&.is-style-error {
+		border: 3px solid;
+		border-color: hsl(0, 75%, 25%);
+	}
+
+	&.is-style-information {
+		border: 3px solid;
+		border-color: hsl(213, 38%, 51%);
+	}
+
+	&.is-style-important {
+		border: 3px solid;
+		border-color: hsl(108, 55%, 60%);
+	}
 }

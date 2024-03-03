@@ -33,39 +33,33 @@ export default function Edit() {
 	return (
 		<div { ...useBlockProps() }>
 			<InnerBlocks
-				allowedBlocks={ [ 'blocks-course/team-member' ] }
+				allowedBlocks={ [
+					[ 'core/heading', { placeholder: 'Lorem ipsum...' } ],
+					[ 'core/paragraph', { placeholder: 'Lorem ipsum...' } ],
+				] }
+				template={ [ [ 'core/heading' ], [ 'core/paragraph' ] ] }
 				// template={[
 				// 	// array of arrays
-				// 	['blocks-course/team-member'],
+				// 	['notice-text'],
 				// 	['blocks-course/team-member'],
 				// 	['blocks-course/team-member'],
 				// 	//
 				// ]}
 
 				//  hook into array and provide block-attributes
-				template={ [
-					//
-					[
-						'blocks-course/team-member',
-						// block attributes
-						{
-							name: 'Name 1',
-							bio: 'Bio 1',
-						},
-					],
-					[
-						'blocks-course/team-member',
-						{
-							// block attributes
-							name: 'Name 2',
-							bio: 'Bio 2',
-						},
-					],
-					//
-					[ 'blocks-course/team-member' ],
-				] }
+				// template={[
+				// 	//
+				// 	[
+				// 		'blox/notice-textbox',
+				// 		// block attributes
+				// 		{
+				// 			name: 'Further information',
+				// 			bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, cumque labore fugit, illo cupiditate error fuga voluptates in, tempora odit voluptatibus. Excepturi minus et dolore consequatur perferendis quas saepe quia.',
+				// 		},
+				// 	]
+				// ]}
 				//
-				templateLock={ 'all' } // || "insert"
+				// templateLock={'all'} // || "insert"
 			/>
 		</div>
 	);

@@ -12,7 +12,7 @@ import { registerBlockType } from '@wordpress/blocks';
  *
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
-import './team-member';
+// import './team-member'; no longer import this component
 import './style.scss';
 
 /**
@@ -28,7 +28,9 @@ import metadata from '../block.json';
  */
 registerBlockType(
 	metadata.name,
-	// 'blocks-course/team-members'
+	// 'notice-text',
+	// 'notice-text' ||
+	// 'blox/notice-text'
 	{
 		/**
 		 * @see ./edit.js
