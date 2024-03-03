@@ -21,20 +21,24 @@
 	&.is-style-warning {
 		border: 3px solid;
 		border-color: hsl(33, 100%, 49%);
+		background-color: hsl(33, 100%, 89%);
 	}
 
 	&.is-style-error {
 		border: 3px solid;
 		border-color: hsl(0, 75%, 25%);
+		background-color: hsl(0, 75%, 80%);
 	}
 
 	&.is-style-information {
 		border: 3px solid;
 		border-color: hsl(213, 38%, 51%);
+		background-color: hsl(213, 38%, 80%);
 	}
 
 	&.is-style-important {
 		border: 3px solid;
-		border-color: hsl(108, 55%, 60%);
+		border-color: hsl(108, 41%, 48%);
+		background-color: hsl(108, 76%, 72%);
 	}
 }
