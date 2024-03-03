@@ -3,11 +3,11 @@ import { __ } from '@wordpress/i18n';
 import Edit from './edit';
 import Save from './save';
 
-registerBlockType( 'blocks-course/team-member', {
-	title: __( 'Team Member', 'team-members' ),
-	description: __( 'A team member item', 'team-members' ),
+registerBlockType( 'blox/notice-textbox', {
+	title: __( 'Heading Of Notice', 'notice-text' ),
+	description: __( 'An exttra notice', 'notice-text' ),
 	icon: 'admin-users',
-	parent: [ 'blocks-course/team-members' ],
+	parent: [ 'blox/notice-text' ],
 	supports: {
 		//  disable block-editor features
 		reusable: false,

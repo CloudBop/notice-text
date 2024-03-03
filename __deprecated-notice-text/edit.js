@@ -12,20 +12,20 @@ export default function Edit( { attributes, setAttributes } ) {
 	return (
 		<div { ...useBlockProps() }>
 			<RichText
-				placeholder={ __( 'Member Name', 'team-member' ) }
-				tagName="h4"
+				placeholder={ __( 'Notice Heading', 'notice-text' ) }
 				onChange={ onChangeName }
 				value={ name }
+				tagName="span"
 				// remove bold, alignment, italic formatting ect
-				allowedFormats={ [] }
+				// allowedFormats={[]}
 			/>
 			<RichText
-				placeholder={ __( 'Member Bio', 'team-member' ) }
+				placeholder={ __( 'Notice copy', 'notice-text' ) }
 				tagName="p"
 				onChange={ onChangeBio }
 				value={ bio }
 				// remove bold, alignment, italic formatting ect
-				allowedFormats={ [] }
+				// allowedFormats={[]}
 			/>
 		</div>
 	);
