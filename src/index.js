@@ -42,12 +42,21 @@ registerBlockType(
 		 * @see ./save.js
 		 */
 		save,
-
+		icon: {
+			src: 'format-aside',
+			foreground: '#0084ff',
+			background: '#e1e1e1',
+		},
 		variations: [
 			{
 				name: 'blox/warning-text',
 				title: __( 'Warning Text Box' ),
-				icon: 'warning',
+				// icon: 'warning',
+				icon: {
+					src: 'warning',
+					foreground: '#ff9100',
+					background: '#e1e1e1',
+				},
 				attributes: {
 					className: 'is-style-warning',
 				},
@@ -75,7 +84,11 @@ registerBlockType(
 			{
 				name: 'blox/error-text',
 				title: __( 'Error Text Box' ),
-				icon: 'dismiss',
+				icon: {
+					src: 'dismiss',
+					foreground: '#f65858',
+					background: '#e1e1e1',
+				},
 				attributes: {
 					className: 'is-style-error',
 				},
@@ -103,7 +116,22 @@ registerBlockType(
 			{
 				name: 'blox/important-text',
 				title: __( 'Important Text Box' ),
-				icon: 'yes',
+				// icon: 'yes',
+				icon: {
+					src: 'yes',
+					// (
+					// 	<svg
+					// 		version="1.1"
+					// 		viewBox="0 0 500 500"
+					// 		preserveAspectRatio="xMinYMin meet"
+					// 	>
+					// 		<circle cx="250" cy="250" r="200" />
+					// 	</svg>
+					// )
+					background: '#e1e1e1',
+					foreground: '#24a729',
+				},
+
 				attributes: {
 					className: 'is-style-important',
 				},
@@ -121,7 +149,7 @@ registerBlockType(
 						{ level: 3, content: 'A heading for the notice.' },
 					],
 					[
-						'notice-text/warning',
+						'blox/notice-textbox',
 						{
 							copy: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe libero expedita nemo unde. At esse deserunt laboriosam ducimus officiis, a, tenetur harum ipsum molestiae maiores alias praesentium, id nam quam?',
 						},
