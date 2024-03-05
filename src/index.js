@@ -3,7 +3,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-import { registerBlockType } from '@wordpress/blocks';
+import { registerBlockType, createBlock } from '@wordpress/blocks';
 import { __ } from '@wordpress/i18n';
 
 /**
@@ -45,7 +45,7 @@ registerBlockType(
 
 		variations: [
 			{
-				name: 'notice-test/warning',
+				name: 'blox/warning-text',
 				title: __( 'Warning Text Box' ),
 				icon: 'warning',
 				attributes: {
@@ -73,7 +73,7 @@ registerBlockType(
 				],
 			},
 			{
-				name: 'notice-test/error',
+				name: 'blox/error-text',
 				title: __( 'Error Text Box' ),
 				icon: 'dismiss',
 				attributes: {
@@ -101,7 +101,7 @@ registerBlockType(
 				],
 			},
 			{
-				name: 'notice-test/important',
+				name: 'blox/important-text',
 				title: __( 'Important Text Box' ),
 				icon: 'yes',
 				attributes: {
@@ -121,7 +121,7 @@ registerBlockType(
 						{ level: 3, content: 'A heading for the notice.' },
 					],
 					[
-						'blox/notice-textbox',
+						'notice-text/warning',
 						{
 							copy: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe libero expedita nemo unde. At esse deserunt laboriosam ducimus officiis, a, tenetur harum ipsum molestiae maiores alias praesentium, id nam quam?',
 						},
@@ -129,5 +129,22 @@ registerBlockType(
 				],
 			},
 		],
+		transforms: {
+			// from another block to text-block
+			from: [
+				{
+					//  type errorbox and then press enter to create a new block
+					type: 'enter',
+					regExp: /noticebox/i,
+					transform: () => {
+						return createBlock( metadata.name, {
+							// variant: 'notice-text/error'
+							// shadow: true,
+							// gradient: 'red-to-blue',
+						} );
+					},
+				},
+			],
+		},
 	}
 );
