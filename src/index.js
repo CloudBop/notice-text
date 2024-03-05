@@ -4,6 +4,7 @@
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
 import { registerBlockType } from '@wordpress/blocks';
+import { __ } from '@wordpress/i18n';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -12,7 +13,7 @@ import { registerBlockType } from '@wordpress/blocks';
  *
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
-// import './team-member'; no longer import this component
+import './notice-textbox'; //no longer import this component
 import './style.scss';
 
 /**
@@ -41,5 +42,92 @@ registerBlockType(
 		 * @see ./save.js
 		 */
 		save,
+
+		variations: [
+			{
+				name: 'notice-test/warning',
+				title: __( 'Warning Text Box' ),
+				icon: 'warning',
+				attributes: {
+					className: 'is-style-warning',
+				},
+
+				// icon: 'format-quote',
+				isActive: ( blockAttributes, variationAttributes ) => {
+					return (
+						variationAttributes?.className ===
+						blockAttributes.className
+					);
+				},
+				innerBlocks: [
+					[
+						'core/heading',
+						{ level: 3, content: 'A heading for the notice.' },
+					],
+					[
+						'blox/notice-textbox',
+						{
+							copy: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe libero expedita nemo unde. At esse deserunt laboriosam ducimus officiis, a, tenetur harum ipsum molestiae maiores alias praesentium, id nam quam?',
+						},
+					],
+				],
+			},
+			{
+				name: 'notice-test/error',
+				title: __( 'Error Text Box' ),
+				icon: 'dismiss',
+				attributes: {
+					className: 'is-style-error',
+				},
+
+				// icon: 'format-quote',
+				isActive: ( blockAttributes, variationAttributes ) => {
+					return (
+						variationAttributes?.className ===
+						blockAttributes.className
+					);
+				},
+				innerBlocks: [
+					[
+						'core/heading',
+						{ level: 3, content: 'A heading for the notice.' },
+					],
+					[
+						'blox/notice-textbox',
+						{
+							copy: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe libero expedita nemo unde. At esse deserunt laboriosam ducimus officiis, a, tenetur harum ipsum molestiae maiores alias praesentium, id nam quam?',
+						},
+					],
+				],
+			},
+			{
+				name: 'notice-test/important',
+				title: __( 'Important Text Box' ),
+				icon: 'yes',
+				attributes: {
+					className: 'is-style-important',
+				},
+
+				// icon: 'format-quote',
+				isActive: ( blockAttributes, variationAttributes ) => {
+					return (
+						variationAttributes?.className ===
+						blockAttributes.className
+					);
+				},
+				innerBlocks: [
+					[
+						'core/heading',
+						{ level: 3, content: 'A heading for the notice.' },
+					],
+					[
+						'blox/notice-textbox',
+						{
+							copy: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe libero expedita nemo unde. At esse deserunt laboriosam ducimus officiis, a, tenetur harum ipsum molestiae maiores alias praesentium, id nam quam?',
+						},
+					],
+				],
+			},
+		],
 	}
 );
