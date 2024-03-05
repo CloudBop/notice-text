@@ -4,9 +4,9 @@ import Edit from './edit';
 import Save from './save';
 
 registerBlockType( 'blox/notice-textbox', {
-	title: __( 'Heading Of Notice', 'notice-text' ),
-	description: __( 'An exttra notice', 'notice-text' ),
-	icon: 'admin-users',
+	title: __( 'Notice Textbox', 'notice-text' ),
+	description: __( 'An notice textbox', 'notice-text' ),
+	icon: 'editor-paragraph',
 	parent: [ 'blox/notice-text' ],
 	supports: {
 		//  disable block-editor features
@@ -14,15 +14,16 @@ registerBlockType( 'blox/notice-textbox', {
 		html: false,
 	},
 	attributes: {
-		name: {
-			type: 'string',
-			source: 'html',
-			selector: 'h4',
-		},
-		bio: {
+		copy: {
 			type: 'string',
 			source: 'html',
 			selector: 'p',
+			default: 'Here is some copy regarding the notice content.',
+		},
+	},
+	example: {
+		attributes: {
+			copy: 'This is some text!',
 		},
 	},
 	edit: Edit,
