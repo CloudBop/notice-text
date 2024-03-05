@@ -6,6 +6,7 @@
 	"category": "text",
 	"description": "A box of text wrapped in borders, colours and styling.",
 	"keywords": [ "text", "paragraph", "box" ],
+	"icon": "format-aside",
 	"supports": {
 		"html": false
 	},
@@ -28,8 +29,23 @@
 			"label": "Important"
 		}
 	],
+	"example": {
+		"attributes": {
+			"copy": "This is some text!"
+		}
+	},
 	"textdomain": "notice-text",
 	"editorScript": "file:./build/index.js",
 	"editorStyle": "file:./build/index.css",
-	"style": "file:./build/style-index.css"
+	"style": "file:./build/style-index.css",
+	"attributes": {
+		"defaultClass": {
+			"type": "string",
+			"default": "is-style-information"
+		},
+		"className": {
+			"type": "string",
+			"default": "[className] won't work - reserved, but [classNames] works"
+		}
+	}
 }
