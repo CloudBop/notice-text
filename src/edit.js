@@ -29,37 +29,31 @@ import './editor.scss';
  *
  * @return {Element} Element to render.
  */
-export default function Edit() {
-	return (
-		<div { ...useBlockProps() }>
-			<InnerBlocks
-				allowedBlocks={ [
-					[ 'core/heading', { placeholder: 'Lorem ipsum...' } ],
-					[ 'core/paragraph', { placeholder: 'Lorem ipsum...' } ],
-				] }
-				template={ [ [ 'core/heading' ], [ 'core/paragraph' ] ] }
-				// template={[
-				// 	// array of arrays
-				// 	['notice-text'],
-				// 	['blocks-course/team-member'],
-				// 	['blocks-course/team-member'],
-				// 	//
-				// ]}
 
-				//  hook into array and provide block-attributes
-				// template={[
-				// 	//
-				// 	[
-				// 		'blox/notice-textbox',
-				// 		// block attributes
-				// 		{
-				// 			name: 'Further information',
-				// 			bio: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, cumque labore fugit, illo cupiditate error fuga voluptates in, tempora odit voluptatibus. Excepturi minus et dolore consequatur perferendis quas saepe quia.',
-				// 		},
-				// 	]
-				// ]}
-				//
-				// templateLock={'all'} // || "insert"
+export default function Edit( { attributes } ) {
+	// console.log('attributes', attributes)
+	const classes =
+		//
+		attributes.className
+			? attributes.className
+			: // expected in block.json
+			  attributes?.defaultClass || 'noClass';
+	return (
+		<div { ...useBlockProps( { className: classes } ) }>
+			<InnerBlocks
+				template={ [
+					[
+						'core/heading',
+						{ content: 'A heading for the notice.' },
+					],
+					[
+						'blox/notice-textbox',
+						{
+							copy: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Saepe libero expedita nemo unde. At esse deserunt laboriosam ducimus officiis, a, tenetur harum ipsum molestiae maiores alias praesentium, id nam quam?',
+						},
+					],
+				] }
+				allowedBlocks={ [ 'core/heading', 'blox/notice-textbox' ] }
 			/>
 		</div>
 	);
